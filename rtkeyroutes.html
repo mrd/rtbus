@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>MBTA Real-time Bus Service</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0; font-family: sans-serif }
+      #map_canvas { height: 100% }
+    .circle {
+        border: 1px solid black;
+        width: 10px;
+        height: 10px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right:10px solid black;
+    display: inline-block;
+    }
+    .arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left:10px solid black;
+    display: inline-block;
+    }
+    #controls #ff, #controls #rw, #controls #p {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0 10px;
+    }
+    #controls {
+    border-top: 1px solid black;
+    padding-top: 5px;
+    text-align: center;
+    }
+    .pauserect {
+    width: 5px;
+    height: 20px;
+    background-color: black;
+    display: inline-block;
+    margin-right: 3px;
+    }
+    #legend #desc {
+    border-top: 1px solid black;
+    }
+    .ui-progressbar .ui-progressbar-value { background-image: url(pbar-ani.gif); }
+    #progressbar { z-index: 999; height: 22px }
+    #progressbar #text { position: absolute }
+    </style>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript"
+            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAs7es33y_rUlie2HyBfrLEgUmBSz2D1TM&sensor=false">
+    </script>
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+    </script>
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js">
+    </script>
+
+    <script type="text/javascript"
+            src="RYB/ryb.js">
+    </script>
+
+    <script type="text/javascript"
+            src="rtkeyroutes_load.js">
+    </script>
+<!--
+    <script type="text/javascript"
+            src="rtkeyroutes_0800.php">
+    </script>
+    <script type="text/javascript"
+            src="rtkeyroutes_1100.php">
+    </script>
+    <script type="text/javascript"
+            src="rtkeyroutes_1400.php">
+    </script>
+    <script type="text/javascript"
+            src="rtkeyroutes_1600.php">
+    </script>
+    <script type="text/javascript"
+            src="rtkeyroutes_1800.php">
+    </script>
+    <script type="text/javascript"
+            src="rtkeyroutes_2000.php">
+    </script>
+-->
+    <script type="text/javascript"
+            src="rtdisplay.min.js">
+    </script>
+
+  </head>
+<body>
+  <div id="progressbar"><span id="text">Loading Data</span></div>
+  <div id="map_canvas"></div>
+</body>
+</html>
